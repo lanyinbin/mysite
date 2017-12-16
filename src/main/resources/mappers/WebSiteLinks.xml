@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyb.mysite.dao.WebSiteLinkDao">
+   <resultMap id="webSiteLinks" type="com.lyb.mysite.model.WebSiteLinks">
+       <result property="id" column="id"/>
+       <result property="linkName" column="link_name"/>
+       <result property="linkType" column="link_type"/>
+       <result property="linkUrl" column="link_url"/>
+       <result property="linkImgUrl" column="link_img_url"/>
+   </resultMap>
+
+   <select id="queryLinksByType" resultMap="webSiteLinks">
+       select * from db_website where link_type=#{0}
+   </select>
+
+   <insert id="saveLinks" useGeneratedKeys="true" keyProperty="id" parameterType="webSiteLinks">
+       insert into db_website(link_name,link_type,link_url,link_img_url)
+       values(#{linkName},#{linkType},#{linkUrl},#{linkImgUrl})
+   </insert>
+
+   <update id="updateLinks" useGeneratedKeys="true" keyProperty="id" parameterType="webSiteLinks">
+       update db_website set link_name=#{linkName},link_type=#{linkType},link_url=#{linkUrl},linkImgUrl=#{link_img_url}
+       where id =#{id}
+   </update>
+
+</mapper> 

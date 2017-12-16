@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <appender name="default" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/default.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="weixin" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/weixin.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="weixin" additivity="false">
+        <appender-ref ref="weixin" />
+    </logger>
+
+    <appender name="activity_stat" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/activity_stat.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="activity_stat" additivity="false">
+        <appender-ref ref="activity_stat" />
+    </logger>
+
+    <appender name="alipay" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/alipay.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="alipay" additivity="false">
+        <appender-ref ref="alipay" />
+    </logger>
+
+    <appender name="order" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/order.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="order" additivity="false">
+        <appender-ref ref="order" />
+    </logger>
+
+    <appender name="user" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/user.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="user" additivity="false">
+        <appender-ref ref="user" />
+    </logger>
+
+    <appender name="invoice" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/invoice.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="invoice" additivity="false">
+        <appender-ref ref="invoice" />
+    </logger>
+
+    <appender name="app" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="app" additivity="false">
+        <appender-ref ref="app" />
+    </logger>
+
+    <appender name="activity" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/activity.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="activity" additivity="false">
+        <appender-ref ref="activity" />
+    </logger>
+
+    <appender name="account" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/account.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="account" additivity="false">
+        <appender-ref ref="account" />
+    </logger>
+
+    <appender name="pay" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/pay.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="pay" additivity="false">
+        <appender-ref ref="pay" />
+    </logger>
+
+    <appender name="settlement" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/settlement.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="settlement" additivity="false">
+        <appender-ref ref="settlement" />
+    </logger>
+
+    <appender name="exam" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoding>UTF-8</encoding>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/exam.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <MaxHistory>30</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="exam" additivity="false">
+        <appender-ref ref="exam" />
+    </logger>
+    
+    <logger name="org.springframework" level="INFO" />
+
+    <root level="INFO">
+        <appender-ref ref="default" />
+    </root>
+
+</configuration>
