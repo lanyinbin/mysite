@@ -1,5 +1,7 @@
 $().ready(function(e) {
-	//头部	
+	/**********************************
+	 * head 头部
+	 **********************************/
 	$('head').append('<link href="css/kefu.css" type="text/css" rel="stylesheet">')
     $("#header").html(
 		'<div class="header-first">'+
@@ -9,30 +11,37 @@ $().ready(function(e) {
                     	'<span class="nav-btn">导航</span>'+
                        ' <ul class="toolbar">'+
                             '<li><a href="javascript:void(0)" id="homePage">首页</a></li>'+
-                            '<li><a href="http://www.lanyinbin.cn" id="blogPage">博客站点</a></li>'+
-                            '<li><a href="javascript:void(0)" id="openSourcePage">开源项目</a></li+>'+
-                            '<li><a href="javascript:void(0)" id="projectDesigner">毕业设计</a></li>'+
-                            '<li><a href="javascript:void(0)" id="mirsoRead">微信阅读</a></li>'+
+                            '<li><a href="http://www.lanyinbin.cn" id="blogPage">个人博客</a></li>'+
+                            '<li><a href="javascript:void(0)" id="readPage">好文推荐</a></li+>'+
+                            '<li><a href="javascript:void(0)" id="projectDesignerPage">毕业设计</a></li>'+
+                            '<li><a href="javascript:void(0)" id="toolsPage">常用工具</a></li>'+
+                            '<li><a href="javascript:void(0)" id="openSourcesPage">开源项目</a></li>'+
                         '</ul>'+
                    '</div>'+
                    '<div class="logo img-first mg-xs-t12"><img src="/resources/images/logo.jpg" alt="官网logo" title="官网logo"></div>'+
                '</div>'+
             '</div>'+
         '</div>'
-		) 
-		
-	//尾部	
+		)
+
+	/**********************************
+	 * 尾部
+	 **********************************/
     $("#footer").html(
 		'<div class="go_top" id="go_top" style="display: none;"></div>'+
         '<div class="footer-first font12 footer-flow">'+
         	'Copyright © 2015-2018 yinbin.lan 版权所有'+
         '</div>'
 	)
-	
-	//页面跳转后给导航栏添加激活样式
-		var nc=pageName();
-		$('.toolbar li').find("a[href='"+nc+"']").addClass("active");
-	//客服qq
+
+	/**********************************
+	 * 页面跳转后给导航栏添加激活样式
+	 **********************************/
+	var nc=pageName();
+	$('.toolbar li').find("a[href='"+nc+"']").addClass("active");
+	/**********************************
+	 * 客服qq
+	 **********************************/
 	$("body").append(
 	         '<div id="floatTools" class="rides-cs">'+
             '<div class="floatL"><div class="visible-xs"><span class="color-fff aFloatTools_Show">客服Q展开</span><span class="color-fff aFloatTools_Hide" style="display:none">客服Q收起</span></div>'+
@@ -49,7 +58,7 @@ $().ready(function(e) {
             '</div>'+
             '</div>'+
         '</div>')
-	//客服qq
+
 	$(function(){
 
 		$(".aFloatTools_Show").click(function(){
@@ -77,29 +86,30 @@ $().ready(function(e) {
 
 
 	});
-	
-	//移动端 首页导航和文档中心-文章导航伸缩功能
+	/**********************************
+	 * 移动端 首页导航和文档中心-文章导航伸缩功能
+	 **********************************/
 	var win_w=$(window).width();
 	if(win_w<767){
 		$("#nav_top ul").css("display","block").hide(); //解决导航第一次点击出现闪屏的现象，可能是因为之前使用了display:none;这个样式，造成初次点击时候，页面同时css和js同时变化，所以有闪屏。
 		
-		$("#nav_top").on("click",this,function(){//alert(111)		
+		$("#nav_top").on("click",this,function(){
 			$("#nav_top ul").slideToggle();
-			//e.preventDefault();
 		})
-		$("#myScrollspy").on("click",this,function(){//alert(1133)
+		$("#myScrollspy").on("click",this,function(){
 			$("#myScrollspy ul").slideToggle();
-			//e.preventDefault();
 		})
 	}
-	
-	//返回顶部
+	/**********************************
+	 * 返回顶部
+	 **********************************/
 	$(window).scroll(function(){
 	    if($(window).scrollTop()>800)
 	    $("#go_top").show();  
 	    else 
 		$("#go_top").hide(); 
 	   });
+
 	$("#go_top").click(function(){
 		 $('body,html').animate({ scrollTop: 0 }, 500)
 	}) 
@@ -108,9 +118,8 @@ $().ready(function(e) {
 		$("#testDr a").removeClass("active");
 		$(this).addClass("active");
 	})
-	
 
-});
+ });
 	window.onresize =function(){window.location.reload();}
 
 	//导航栏
